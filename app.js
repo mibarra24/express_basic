@@ -10,7 +10,18 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-//Con esto inicializamos esta app
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+//Respondiendo texto
+//localhost:3000/launchx
+app.get('/lauchx', (req, res) => {
+    res.send('Bienvenidos a Lauchx')
 })
+
+//Regresando un objeto
+// localhost:200/explorersInNode
+app.get('/explorersInNode', (req, res) =>{
+    const explorer = {name: "Explorer", msg: "Hello"}
+    res.send(explorer)
+})
+
+// Query Params: Recibir parametros por la url
+// http://localhost:3000/explorers/carlo
